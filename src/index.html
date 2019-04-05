@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <title> Flashlight in a dark room </title>
+  </head>
+  <body>
+    <div class="room">
+      <label class="light-switch" for="light-switch">
+        <input type="checkbox" class="light-switch__checkbox" id="light-switch" />
+        <span class="light-switch__icon"></span>
+        <div class="flashlight"></div>
+      </label>
+    </div>
+    <script>
+      (function() {
+        document.addEventListener('mousemove', function(event) {
+          var flashLight = document.getElementsByClassName('flashlight')[0];
+          flashLight.style.top = event.clientY + "px";
+          flashLight.style.left = event.clientX + "px";
+        });
+      })();
+    </script>
+  </body>
+</htlm>

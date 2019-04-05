@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px;
+
+  @media (max-width: 800px) {
+    font-size: 56.25%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+
+.room {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.flashlight {
+  pointer-events: none;
+  position: absolute;
+  height: 200%;
+  width: 200%;
+  background: radial-gradient(circle at center, transparent 8rem, rgba(0, 0, 0, .95) 15rem);
+  transform: translate(-50%, -50%);
+  transition: opacity .3s linear;
+  opacity: 1;
+
+  :checked ~ & {
+    opacity: 0;
+  }
+}
+
+.light-switch {
+  &__icon {
+    position: absolute;
+    right: 10rem;
+    top: 30%;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    transition: all .3s linear;
+    cursor: pointer;
+  }
+
+  &__checkbox:checked + &__icon {
+    box-shadow: none;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+}
